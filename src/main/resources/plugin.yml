@@ -13,9 +13,9 @@ commands:
 
 permissions:
   pay.use:
-    default: true
+    default: op
   eco.use:
-    default: true
+    default: op
   eco.admin.set:
     default: op
     description: allows permitted to set coins and shards
