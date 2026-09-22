@@ -169,7 +169,7 @@ public class EcoAPI
     public static boolean removeShards(Player player, int shards)
     {
         try {
-            int current_balance = EcoProvider.readCoinsFromSQL(player.getUniqueId());
+            int current_balance = EcoProvider.readShardsFromSQL(player.getUniqueId());
 
             if (shards <= 0)
             {
@@ -193,7 +193,7 @@ public class EcoAPI
             formatter.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.GERMANY));
             String formatted = formatter.format(new_balance);
 
-            player.sendMessage(language.get("prefix") + language.translateString("coins.updated", String.valueOf(formatted)));
+            player.sendMessage(language.get("prefix") + language.translateString("shards.updated", String.valueOf(formatted)));
             return true;
         } catch (SQLException e) {
             throw new RuntimeException(e);
